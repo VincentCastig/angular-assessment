@@ -1,5 +1,5 @@
-app.module('assessment', ["ui.router"])
-  .config($stateProvider, $urlRouterProvider) {
+angular.module("assessment", ['ui.router'])
+  .config(($stateProvider, $urlRouterProvider) => {
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
@@ -17,6 +17,12 @@ app.module('assessment', ["ui.router"])
       })
       .state('shop', {
         url: '/shop',
-        templateUrl: './views/shop.html'
+        templateUrl: './views/shop.html',
+        controller: 'shopCtrl'
       })
-}
+      .state('details', {
+        url: '/shop/:id',
+        templateUrl: './views/product-details.html',
+        controller: 'detailsCtrl'
+      })
+})
