@@ -7,6 +7,7 @@ angular.module("assessment").controller("shopCtrl", function(shopService, $scope
     console.log('controller')
     shopService.getProducts()
     .then( (response) => {
+      console.log(response)
 
       $scope.displayProducts = response;
     })
